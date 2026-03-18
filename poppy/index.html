@@ -147,6 +147,104 @@
       .project-header h1 { font-size: 22px; }
       .author-list { font-size: 14px; }
     }
+
+    /* ── Results grid ── */
+    .results-grid { display: flex; flex-direction: column; gap: 6px; }
+
+    .rg-header, .rg-row {
+      display: grid;
+      grid-template-columns: 60px repeat(4, 1fr);
+      gap: 6px;
+      align-items: center;
+    }
+
+    .rg-col-label {
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .rg-row-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      text-align: center;
+    }
+
+    /* ── Image compare slider ── */
+    .img-compare {
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      cursor: col-resize;
+      user-select: none;
+    }
+
+    .img-compare .ic-before,
+    .img-compare .ic-after {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .img-compare .ic-after {
+      position: absolute;
+      top: 0; left: 0;
+      clip-path: inset(0 50% 0 0);
+    }
+
+    .img-compare .ic-range {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      opacity: 0;
+      cursor: col-resize;
+      margin: 0;
+      z-index: 10;
+    }
+
+    .ic-divider {
+      position: absolute;
+      top: 0; bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: white;
+      pointer-events: none;
+      transform: translateX(-50%);
+    }
+
+    .ic-divider::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 28px; height: 28px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+    }
+
+    .ic-labels {
+      position: absolute;
+      bottom: 6px;
+      left: 0; right: 0;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 8px;
+      pointer-events: none;
+    }
+
+    .ic-labels span {
+      background: rgba(0,0,0,0.45);
+      color: white;
+      font-size: 11px;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
   </style>
 </head>
 <body>
@@ -208,7 +306,116 @@
   <!-- ── Results ────────────────────────────────────────────────────── -->
   <div class="proj-section">
     <h2>Results</h2>
-    <div class="results-placeholder">Results coming soon.</div>
+
+    <div class="results-grid">
+      <!-- Column headers -->
+      <div class="rg-header">
+        <div class="rg-row-label"></div>
+        <div class="rg-col-label">Image / Polar</div>
+        <div class="rg-col-label">Normal MoGe / +Poppy</div>
+        <div class="rg-col-label">Error Map MoGe / +Poppy</div>
+        <div class="rg-col-label">L<sub>s</sub> / L<sub>d</sub></div>
+      </div>
+
+      <!-- Row 1: NeRSP -->
+      <div class="rg-row">
+        <div class="rg-row-label">NeRSP</div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/nersp_real_LION_0045/image.png" alt="Image">
+          <img class="ic-after"  src="../img/poppy/nersp_real_LION_0045/polar.png" alt="Polar">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>Image</span><span>Polar</span></div>
+        </div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/nersp_real_LION_0045/normal_moge.png" alt="MoGe">
+          <img class="ic-after"  src="../img/poppy/nersp_real_LION_0045/normal_moge+polar.png" alt="MoGe+Poppy">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>MoGe</span><span>+Poppy</span></div>
+        </div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/nersp_real_LION_0045/errmap_moge.png" alt="MoGe">
+          <img class="ic-after"  src="../img/poppy/nersp_real_LION_0045/errmap_moge+polar.png" alt="MoGe+Poppy">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>MoGe</span><span>+Poppy</span></div>
+        </div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/nersp_real_LION_0045/Ls.png" alt="Ls">
+          <img class="ic-after"  src="../img/poppy/nersp_real_LION_0045/Ld.png" alt="Ld">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>L<sub>s</sub></span><span>L<sub>d</sub></span></div>
+        </div>
+      </div>
+
+      <!-- Row 2: SfPUEL -->
+      <div class="rg-row">
+        <div class="rg-row-label">SfPUEL</div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/sfpuel_real_real1_owlblue/image.png" alt="Image">
+          <img class="ic-after"  src="../img/poppy/sfpuel_real_real1_owlblue/polar.png" alt="Polar">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>Image</span><span>Polar</span></div>
+        </div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/sfpuel_real_real1_owlblue/normal_moge.png" alt="MoGe">
+          <img class="ic-after"  src="../img/poppy/sfpuel_real_real1_owlblue/normal_moge+polar.png" alt="MoGe+Poppy">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>MoGe</span><span>+Poppy</span></div>
+        </div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/sfpuel_real_real1_owlblue/errmap_moge.png" alt="MoGe">
+          <img class="ic-after"  src="../img/poppy/sfpuel_real_real1_owlblue/errmap_moge+polar.png" alt="MoGe+Poppy">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>MoGe</span><span>+Poppy</span></div>
+        </div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/sfpuel_real_real1_owlblue/Ls.png" alt="Ls">
+          <img class="ic-after"  src="../img/poppy/sfpuel_real_real1_owlblue/Ld.png" alt="Ld">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>L<sub>s</sub></span><span>L<sub>d</sub></span></div>
+        </div>
+      </div>
+
+      <!-- Row 3: PISR -->
+      <div class="rg-row">
+        <div class="rg-row-label">PISR</div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/pisr_BlackLoong_012/image.png" alt="Image">
+          <img class="ic-after"  src="../img/poppy/pisr_BlackLoong_012/polar.png" alt="Polar">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>Image</span><span>Polar</span></div>
+        </div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/pisr_BlackLoong_012/normal_moge.png" alt="MoGe">
+          <img class="ic-after"  src="../img/poppy/pisr_BlackLoong_012/normal_moge+polar.png" alt="MoGe+Poppy">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>MoGe</span><span>+Poppy</span></div>
+        </div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/pisr_BlackLoong_012/errmap_moge.png" alt="MoGe">
+          <img class="ic-after"  src="../img/poppy/pisr_BlackLoong_012/errmap_moge+polar.png" alt="MoGe+Poppy">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>MoGe</span><span>+Poppy</span></div>
+        </div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/pisr_BlackLoong_012/Ls.png" alt="Ls">
+          <img class="ic-after"  src="../img/poppy/pisr_BlackLoong_012/Ld.png" alt="Ld">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>L<sub>s</sub></span><span>L<sub>d</sub></span></div>
+        </div>
+      </div>
+    </div><!-- .results-grid -->
   </div>
 
   <!-- ── BibTeX ─────────────────────────────────────────────────────── -->
@@ -219,5 +426,21 @@
 
 </div><!-- .container -->
 
+<script>
+  document.querySelectorAll('.img-compare').forEach(function(el) {
+    var range   = el.querySelector('.ic-range');
+    var after   = el.querySelector('.ic-after');
+    var divider = el.querySelector('.ic-divider');
+
+    function update(val) {
+      var pct = 100 - val;
+      after.style.clipPath   = 'inset(0 ' + pct + '% 0 0)';
+      divider.style.left     = val + '%';
+    }
+
+    range.addEventListener('input', function() { update(this.value); });
+    update(range.value);
+  });
+</script>
 </body>
 </html>
