@@ -440,8 +440,8 @@
     var divider = el.querySelector('.ic-divider');
 
     function update(val) {
-      after.style.clipPath = 'inset(0 ' + val + '% 0 0)';
-      divider.style.left   = (100 - val) + '%';
+      after.style.clipPath = 'inset(0 0 0 ' + val + '%)';
+      divider.style.left   = val + '%';
     }
 
     range.addEventListener('input', function() { update(this.value); });
