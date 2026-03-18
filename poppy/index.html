@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poppy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    :root { --max-w: 960px; }
+
+    .project-header {
+      text-align: center;
+      padding: 56px 24px 40px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 48px;
+    }
+
+    .project-header .venue {
+      font-size: 15px;
+      color: #b05a00;
+      font-weight: 600;
+      margin-bottom: 14px;
+      letter-spacing: 0.3px;
+    }
+
+    .project-header h1 {
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 1.3;
+      max-width: 800px;
+      margin: 0 auto 22px;
+      letter-spacing: -0.3px;
+    }
+
+    .author-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px 24px;
+      font-size: 16px;
+      margin-bottom: 28px;
+    }
+
+    .author-list a, .author-list span {
+      color: var(--text);
+    }
+    .author-list .me { font-weight: 600; }
+
+    .affil-list {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 28px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 20px;
+      border: 1.5px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .btn:hover { border-color: var(--link); color: var(--link); text-decoration: none; background: #f0f6ff; }
+
+    /* ── Sections ── */
+    .proj-section {
+      margin-bottom: 52px;
+    }
+
+    .proj-section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 8px;
+      margin-bottom: 20px;
+    }
+
+    .abstract-text {
+      font-size: 16px;
+      line-height: 1.75;
+      color: #333;
+      text-align: justify;
+    }
+
+    .teaser-wrap {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .teaser-wrap img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .teaser-wrap object,
+    .teaser-wrap embed {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    .fig-caption {
+      font-size: 14px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 10px;
+      line-height: 1.5;
+    }
+
+    .results-placeholder {
+      background: #f7f7f7;
+      border: 1px dashed #ccc;
+      border-radius: 8px;
+      padding: 48px 24px;
+      text-align: center;
+      color: #aaa;
+      font-size: 15px;
+    }
+
+    .bibtex-block {
+      background: #f5f5f5;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px 24px;
+      font-family: "Courier New", monospace;
+      font-size: 13.5px;
+      line-height: 1.7;
+      white-space: pre;
+      overflow-x: auto;
+      color: #333;
+    }
+
+    @media (max-width: 620px) {
+      .project-header h1 { font-size: 22px; }
+      .author-list { font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ── Header ─────────────────────────────────────────────────────── -->
+  <div class="project-header">
+    <div class="venue">Under Review · ECCV 2026</div>
+    <h1>Poppy: Polarization-Based Plug-and-Play Guidance for Enhancing Surface Normal Estimation</h1>
+
+    <div class="author-list">
+      <a href="https://irnkim.github.io" class="me">Irene Kim</a>
+      <a href="https://starc52.net">Sai Tanmay Reddy Chakkera</a>
+      <a href="https://alexgraikos.github.io/">Alexandros Graikos</a>
+      <a href="https://www3.cs.stonybrook.edu/~samaras/">Dimitris Samaras</a>
+      <a href="https://akshatdave.github.io/">Akshat Dave</a>
+    </div>
+
+    <div class="affil-list">
+      Stony Brook University &nbsp;·&nbsp; Photon Intelligence Lab
+    </div>
+
+    <div class="btn-row">
+      <a class="btn" href="#">Paper</a>
+      <a class="btn" href="#">arXiv</a>
+      <a class="btn" href="#">Code</a>
+    </div>
+  </div>
+
+  <!-- ── Teaser ──────────────────────────────────────────────────────── -->
+  <div class="proj-section">
+    <div class="teaser-wrap">
+      <img src="../img/poppy/teaser.gif" alt="Poppy teaser" />
+    </div>
+  </div>
+
+  <!-- ── Abstract ───────────────────────────────────────────────────── -->
+  <div class="proj-section">
+    <h2>Abstract</h2>
+    <p class="abstract-text">
+      Monocular surface normal estimators trained on large-scale RGB-normal data often perform poorly in the edge cases of reflective, textureless, and dark surfaces. Polarization encodes surface orientation independently of texture and albedo, offering a physics-based complement for these cases. Existing polarization methods, however, require multi-view capture or specialized training data, limiting generalization. We introduce Poppy, a training-free framework that refines normals from any frozen RGB backbone using single-shot polarization measurements at test time. Keeping backbone weights frozen, Poppy optimizes per-pixel offsets to the input RGB and output normal along with a learned reflectance decomposition. A differentiable rendering layer converts the refined normals into polarization predictions and penalizes mismatches with the observed signal. Across seven benchmarks and three backbone architectures (diffusion, flow, and feed-forward), Poppy reduces mean angular error by 22&ndash;26% on synthetic data and 6&ndash;16% on real data. These results show that guiding learned RGB-based normal estimators with polarization cues at test time refines normals on challenging surfaces without retraining.
+    </p>
+  </div>
+
+  <!-- ── Method ─────────────────────────────────────────────────────── -->
+  <div class="proj-section">
+    <h2>Method</h2>
+    <div class="teaser-wrap">
+      <object data="../img/poppy/pipeline.pdf" type="application/pdf" height="480">
+        <p>Unable to display PDF. <a href="../img/poppy/pipeline.pdf">Download pipeline figure.</a></p>
+      </object>
+    </div>
+    <p class="fig-caption">
+      Overview of the Poppy framework. Given a single RGB-polarization image pair, Poppy refines
+      the normals from a frozen RGB backbone by optimizing input/output offsets and a reflectance
+      decomposition, supervised by a differentiable polarization rendering loss.
+    </p>
+  </div>
+
+  <!-- ── Results ────────────────────────────────────────────────────── -->
+  <div class="proj-section">
+    <h2>Results</h2>
+    <div class="results-placeholder">Results coming soon.</div>
+  </div>
+
+  <!-- ── BibTeX ─────────────────────────────────────────────────────── -->
+  <div class="proj-section">
+    <h2>BibTeX</h2>
+    <div class="bibtex-block">@article{kim2026poppy,
+  title     = {Poppy: Polarization-Based Plug-and-Play Guidance
+               for Enhancing Surface Normal Estimation},
+  author    = {Kim, Irene and Chakkera, Sai Tanmay Reddy and
+               Graikos, Alexandros and Samaras, Dimitris and Dave, Akshat},
+  journal   = {Under Review},
+  year      = {2026}
+}</div>
+  </div>
+
+</div><!-- .container -->
+
+</body>
+</html>
