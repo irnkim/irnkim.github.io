@@ -129,8 +129,8 @@ section p {
 
 .pub-thumb {
   flex-shrink: 0;
-  width: 160px;
-  height: auto;
+  width: 140px;
+  height: 140px;
   border-radius: 6px;
   background: #eee;
   object-fit: contain;
