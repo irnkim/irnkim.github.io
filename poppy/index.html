@@ -308,14 +308,6 @@
     <h2>Results</h2>
 
     <div class="results-grid">
-      <!-- Column headers -->
-      <div class="rg-header">
-        <div class="rg-row-label"></div>
-        <div class="rg-col-label">Image / Polar</div>
-        <div class="rg-col-label">Normal MoGe / +Poppy</div>
-        <div class="rg-col-label">Error Map MoGe / +Poppy</div>
-        <div class="rg-col-label">L<sub>s</sub> / L<sub>d</sub></div>
-      </div>
 
       <!-- Row 1: NeRSP -->
       <div class="rg-row">
@@ -332,14 +324,14 @@
           <img class="ic-after"  src="../img/poppy/nersp_real_LION_0045/normal_moge+polar.png" alt="MoGe+Poppy">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
-          <div class="ic-labels"><span>MoGe</span><span>+Poppy</span></div>
+          <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
         </div>
         <div class="img-compare">
           <img class="ic-before" src="../img/poppy/nersp_real_LION_0045/errmap_moge.png" alt="MoGe">
           <img class="ic-after"  src="../img/poppy/nersp_real_LION_0045/errmap_moge+polar.png" alt="MoGe+Poppy">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
-          <div class="ic-labels"><span>MoGe</span><span>+Poppy</span></div>
+          <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
         </div>
         <div class="img-compare">
           <img class="ic-before" src="../img/poppy/nersp_real_LION_0045/Ls.png" alt="Ls">
@@ -350,40 +342,7 @@
         </div>
       </div>
 
-      <!-- Row 2: SfPUEL -->
-      <div class="rg-row">
-        <div class="rg-row-label">SfPUEL</div>
-        <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/sfpuel_real_real1_owlblue/image.png" alt="Image">
-          <img class="ic-after"  src="../img/poppy/sfpuel_real_real1_owlblue/polar.png" alt="Polar">
-          <input type="range" min="0" max="100" value="50" class="ic-range">
-          <div class="ic-divider"></div>
-          <div class="ic-labels"><span>Image</span><span>Polar</span></div>
-        </div>
-        <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/sfpuel_real_real1_owlblue/normal_moge.png" alt="MoGe">
-          <img class="ic-after"  src="../img/poppy/sfpuel_real_real1_owlblue/normal_moge+polar.png" alt="MoGe+Poppy">
-          <input type="range" min="0" max="100" value="50" class="ic-range">
-          <div class="ic-divider"></div>
-          <div class="ic-labels"><span>MoGe</span><span>+Poppy</span></div>
-        </div>
-        <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/sfpuel_real_real1_owlblue/errmap_moge.png" alt="MoGe">
-          <img class="ic-after"  src="../img/poppy/sfpuel_real_real1_owlblue/errmap_moge+polar.png" alt="MoGe+Poppy">
-          <input type="range" min="0" max="100" value="50" class="ic-range">
-          <div class="ic-divider"></div>
-          <div class="ic-labels"><span>MoGe</span><span>+Poppy</span></div>
-        </div>
-        <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/sfpuel_real_real1_owlblue/Ls.png" alt="Ls">
-          <img class="ic-after"  src="../img/poppy/sfpuel_real_real1_owlblue/Ld.png" alt="Ld">
-          <input type="range" min="0" max="100" value="50" class="ic-range">
-          <div class="ic-divider"></div>
-          <div class="ic-labels"><span>L<sub>s</sub></span><span>L<sub>d</sub></span></div>
-        </div>
-      </div>
-
-      <!-- Row 3: PISR -->
+      <!-- Row 2: PISR -->
       <div class="rg-row">
         <div class="rg-row-label">PISR</div>
         <div class="img-compare">
@@ -394,22 +353,55 @@
           <div class="ic-labels"><span>Image</span><span>Polar</span></div>
         </div>
         <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/pisr_BlackLoong_012/normal_moge.png" alt="MoGe">
-          <img class="ic-after"  src="../img/poppy/pisr_BlackLoong_012/normal_moge+polar.png" alt="MoGe+Poppy">
+          <img class="ic-before" src="../img/poppy/pisr_BlackLoong_012/normal_moge.png" alt="MoGe-2">
+          <img class="ic-after"  src="../img/poppy/pisr_BlackLoong_012/normal_moge+polar.png" alt="MoGe-2+Poppy">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
-          <div class="ic-labels"><span>MoGe</span><span>+Poppy</span></div>
+          <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
         </div>
         <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/pisr_BlackLoong_012/errmap_moge.png" alt="MoGe">
-          <img class="ic-after"  src="../img/poppy/pisr_BlackLoong_012/errmap_moge+polar.png" alt="MoGe+Poppy">
+          <img class="ic-before" src="../img/poppy/pisr_BlackLoong_012/errmap_moge.png" alt="MoGe-2">
+          <img class="ic-after"  src="../img/poppy/pisr_BlackLoong_012/errmap_moge+polar.png" alt="MoGe-2+Poppy">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
-          <div class="ic-labels"><span>MoGe</span><span>+Poppy</span></div>
+          <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
         </div>
         <div class="img-compare">
           <img class="ic-before" src="../img/poppy/pisr_BlackLoong_012/Ls.png" alt="Ls">
           <img class="ic-after"  src="../img/poppy/pisr_BlackLoong_012/Ld.png" alt="Ld">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>L<sub>s</sub></span><span>L<sub>d</sub></span></div>
+        </div>
+      </div>
+
+      <!-- Row 3: SfPUEL -->
+      <div class="rg-row">
+        <div class="rg-row-label">SfPUEL</div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/sfpuel_real_real1_owlblue/image.png" alt="Image">
+          <img class="ic-after"  src="../img/poppy/sfpuel_real_real1_owlblue/polar.png" alt="Polar">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>Image</span><span>Polar</span></div>
+        </div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/sfpuel_real_real1_owlblue/normal_moge.png" alt="MoGe-2">
+          <img class="ic-after"  src="../img/poppy/sfpuel_real_real1_owlblue/normal_moge+polar.png" alt="MoGe-2+Poppy">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
+        </div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/sfpuel_real_real1_owlblue/errmap_moge.png" alt="MoGe-2">
+          <img class="ic-after"  src="../img/poppy/sfpuel_real_real1_owlblue/errmap_moge+polar.png" alt="MoGe-2+Poppy">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
+        </div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/sfpuel_real_real1_owlblue/Ls.png" alt="Ls">
+          <img class="ic-after"  src="../img/poppy/sfpuel_real_real1_owlblue/Ld.png" alt="Ld">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>L<sub>s</sub></span><span>L<sub>d</sub></span></div>
@@ -433,9 +425,8 @@
     var divider = el.querySelector('.ic-divider');
 
     function update(val) {
-      var pct = 100 - val;
-      after.style.clipPath   = 'inset(0 ' + pct + '% 0 0)';
-      divider.style.left     = val + '%';
+      after.style.clipPath = 'inset(0 ' + val + '% 0 0)';
+      divider.style.left   = (100 - val) + '%';
     }
 
     range.addEventListener('input', function() { update(this.value); });
