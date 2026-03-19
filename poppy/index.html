@@ -238,6 +238,59 @@
       pointer-events: none;
     }
 
+    /* ── 3D Mesh viewer ── */
+    .mesh-viewer-wrap {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .mesh-panel {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .mesh-label {
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .mesh-canvas-container {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background: #f0f0f0;
+      cursor: grab;
+    }
+    .mesh-canvas-container:active { cursor: grabbing; }
+    .mesh-canvas-container canvas { display: block; }
+
+    .mesh-colorbar {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+    .mesh-colorbar img {
+      height: 280px;
+      width: auto;
+      border-radius: 4px;
+    }
+
+    .mesh-loading {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      font-size: 13px;
+      color: #aaa;
+    }
+
     .img-single {
       border-radius: 6px;
       border: 1px solid var(--border);
@@ -529,13 +582,23 @@
   <!-- ── 3D Mesh Reconstruction ────────────────────────────────────── -->
   <div class="proj-section">
     <h2>3D Mesh Reconstruction</h2>
-    <div class="teaser-wrap">
-      <img src="../img/poppy/errormap_selected.png" alt="3D Mesh Reconstruction" />
+    <div class="mesh-viewer-wrap">
+      <div class="mesh-panel">
+        <div class="mesh-label">MoGe-2</div>
+        <div class="mesh-canvas-container" id="container-moge"></div>
+      </div>
+      <div class="mesh-panel">
+        <div class="mesh-label">+Poppy</div>
+        <div class="mesh-canvas-container" id="container-poppy"></div>
+      </div>
+      <div class="mesh-colorbar">
+        <img src="../img/poppy/error_map_colorbar.png" alt="Error map colorbar" />
+      </div>
     </div>
     <p class="fig-caption" style="margin-top: 14px;">
-      Surface reconstruction from Poppy-refined normals. Integrating the refined normals yields
-      more accurate 3D geometry, particularly on challenging reflective and textureless regions
-      where RGB-only backbones struggle.
+      3D mesh reconstruction by VCR-GauS on the FROG scene from the NeRSP dataset, colored by
+      angular error. Using Poppy-refined normals yields more accurate surface geometry,
+      especially on challenging reflective regions. Drag to rotate, scroll to zoom.
     </p>
   </div>
 
@@ -546,6 +609,106 @@
   </div>
 
 </div><!-- .container -->
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+
+<script type="module">
+  import * as THREE from 'three';
+  import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+  import { PLYLoader } from 'three/addons/loaders/PLYLoader.js';
+
+  function createViewer(containerId, plyUrl) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = '<div class="mesh-loading">Loading mesh…</div>';
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+    const scene = new THREE.Scene();
+    scene.background = new THREE.Color(0xf0f0f0);
+
+    const w = container.clientWidth, h = container.clientHeight || container.clientWidth;
+    renderer.setSize(w, h);
+
+    const camera = new THREE.PerspectiveCamera(45, w / h, 0.001, 1000);
+    camera.position.set(0, 0, 3);
+
+    const ambient = new THREE.AmbientLight(0xffffff, 2);
+    scene.add(ambient);
+    const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+    dirLight.position.set(1, 2, 3);
+    scene.add(dirLight);
+
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.08;
+
+    const loader = new PLYLoader();
+    loader.load(plyUrl, (geometry) => {
+      geometry.computeVertexNormals();
+      geometry.center();
+
+      const box = new THREE.Box3().setFromBufferAttribute(geometry.attributes.position);
+      const size = box.getSize(new THREE.Vector3());
+      const maxDim = Math.max(size.x, size.y, size.z);
+      camera.position.set(0, 0, maxDim * 2);
+      controls.update();
+
+      const material = new THREE.MeshStandardMaterial({ vertexColors: true });
+      const mesh = new THREE.Mesh(geometry, material);
+      scene.add(mesh);
+
+      container.innerHTML = '';
+      container.appendChild(renderer.domElement);
+    }, undefined, () => {
+      container.innerHTML = '<div class="mesh-loading">Failed to load mesh.</div>';
+    });
+
+    new ResizeObserver(() => {
+      const w = container.clientWidth, h = container.clientHeight || container.clientWidth;
+      renderer.setSize(w, h);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    }).observe(container);
+
+    return { renderer, scene, camera, controls };
+  }
+
+  const v1 = createViewer('container-moge',  '../img/poppy/moge_error_map_colored.ply');
+  const v2 = createViewer('container-poppy', '../img/poppy/poppy_error_map_colored.ply');
+
+  let syncing = false;
+  function syncTo(src, dst) {
+    if (syncing) return;
+    syncing = true;
+    dst.camera.position.copy(src.camera.position);
+    dst.camera.quaternion.copy(src.camera.quaternion);
+    dst.camera.zoom = src.camera.zoom;
+    dst.camera.updateProjectionMatrix();
+    dst.controls.target.copy(src.controls.target);
+    dst.controls.update();
+    syncing = false;
+  }
+  v1.controls.addEventListener('change', () => syncTo(v1, v2));
+  v2.controls.addEventListener('change', () => syncTo(v2, v1));
+
+  function animate() {
+    requestAnimationFrame(animate);
+    v1.controls.update();
+    v2.controls.update();
+    v1.renderer.render(v1.scene, v1.camera);
+    v2.renderer.render(v2.scene, v2.camera);
+  }
+  animate();
+</script>
 
 <script>
   document.querySelectorAll('.img-compare').forEach(function(el) {
