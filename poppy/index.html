@@ -238,6 +238,17 @@
       pointer-events: none;
     }
 
+    .img-single {
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .img-single img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
     .ic-labels span {
       background: rgba(0,0,0,0.45);
       color: white;
@@ -424,6 +435,87 @@
       <b>Radiance Decomposition</b>: compares the specular (L<sub>s</sub>) and diffuse (L<sub>d</sub>) components estimated by Poppy.
       L<sub>s</sub> brightness is enhanced by &times;2 for visualization. SfPUEL image brightness is enhanced by &times;4 for visualization.
     </p>
+  </div>
+
+  <!-- ── Radiance Decomposition Application ───────────────────────── -->
+  <div class="proj-section">
+    <h2>Radiance Decomposition Application</h2>
+
+    <div class="results-grid">
+      <!-- Column headers -->
+      <div class="rg-header" style="grid-template-columns: 60px repeat(5, 1fr);">
+        <div class="rg-row-label"></div>
+        <div class="rg-col-label">Input</div>
+        <div class="rg-col-label">L<sub>s</sub> / L<sub>d</sub></div>
+        <div class="rg-col-label">Polar Specular / Diffuse</div>
+        <div class="rg-col-label">Metallic</div>
+        <div class="rg-col-label">Recoloring</div>
+      </div>
+
+      <!-- Row 1: PANDORA -->
+      <div class="rg-row" style="grid-template-columns: 60px repeat(5, 1fr);">
+        <div class="rg-row-label">PANDORA</div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/decomp_pandora_a2_black_vase_v1_01/image.png" alt="Image">
+          <img class="ic-after"  src="../img/poppy/decomp_pandora_a2_black_vase_v1_01/polar.png" alt="Polarization">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>Image</span><span>Polarization</span></div>
+        </div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/decomp_pandora_a2_black_vase_v1_01/Ls.png" alt="Ls">
+          <img class="ic-after"  src="../img/poppy/decomp_pandora_a2_black_vase_v1_01/Ld.png" alt="Ld">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>L<sub>s</sub></span><span>L<sub>d</sub></span></div>
+        </div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/decomp_pandora_a2_black_vase_v1_01/polar_specular.png" alt="Polar Specular">
+          <img class="ic-after"  src="../img/poppy/decomp_pandora_a2_black_vase_v1_01/polar_diffuse.png" alt="Polar Diffuse">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>Specular</span><span>Diffuse</span></div>
+        </div>
+        <div class="img-single">
+          <img src="../img/poppy/decomp_pandora_a2_black_vase_v1_01/metal.png" alt="Metallic">
+        </div>
+        <div class="img-single">
+          <img src="../img/poppy/decomp_pandora_a2_black_vase_v1_01/recolor.png" alt="Recoloring">
+        </div>
+      </div>
+
+      <!-- Row 2: NeISF -->
+      <div class="rg-row" style="grid-template-columns: 60px repeat(5, 1fr);">
+        <div class="rg-row-label">NeISF</div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/decomp_neisf_real_sakurapot_eval_img_001/image.png" alt="Image">
+          <img class="ic-after"  src="../img/poppy/decomp_neisf_real_sakurapot_eval_img_001/polar.png" alt="Polarization">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>Image</span><span>Polarization</span></div>
+        </div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/decomp_neisf_real_sakurapot_eval_img_001/Ls.png" alt="Ls">
+          <img class="ic-after"  src="../img/poppy/decomp_neisf_real_sakurapot_eval_img_001/Ld.png" alt="Ld">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>L<sub>s</sub></span><span>L<sub>d</sub></span></div>
+        </div>
+        <div class="img-compare">
+          <img class="ic-before" src="../img/poppy/decomp_neisf_real_sakurapot_eval_img_001/polar_specular.png" alt="Polar Specular">
+          <img class="ic-after"  src="../img/poppy/decomp_neisf_real_sakurapot_eval_img_001/polar_diffuse.png" alt="Polar Diffuse">
+          <input type="range" min="0" max="100" value="50" class="ic-range">
+          <div class="ic-divider"></div>
+          <div class="ic-labels"><span>Specular</span><span>Diffuse</span></div>
+        </div>
+        <div class="img-single">
+          <img src="../img/poppy/decomp_neisf_real_sakurapot_eval_img_001/metal.png" alt="Metallic">
+        </div>
+        <div class="img-single">
+          <img src="../img/poppy/decomp_neisf_real_sakurapot_eval_img_001/recolor.png" alt="Recoloring">
+        </div>
+      </div>
+    </div><!-- .results-grid -->
   </div>
 
   <!-- ── BibTeX ─────────────────────────────────────────────────────── -->
