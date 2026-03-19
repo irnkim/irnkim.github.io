@@ -587,7 +587,7 @@
     <div style="display: flex; gap: 8px; align-items: stretch;">
       <div class="results-grid" style="flex: 1;">
         <!-- Column headers -->
-        <div class="rg-header">
+        <div class="rg-header" style="grid-template-columns: 60px repeat(3, 1fr);">
           <div class="rg-row-label"></div>
           <div class="rg-col-label">Input</div>
           <div class="rg-col-label">Normal</div>
@@ -595,7 +595,7 @@
         </div>
 
         <!-- Row 1: FROG 0000 -->
-        <div class="rg-row">
+        <div class="rg-row" style="grid-template-columns: 60px repeat(3, 1fr);">
           <div class="rg-row-label">NeRSP</div>
           <div class="img-compare">
             <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0000/image.png" alt="Image">
@@ -621,7 +621,7 @@
         </div>
 
         <!-- Row 2: FROG 0024 -->
-        <div class="rg-row">
+        <div class="rg-row" style="grid-template-columns: 60px repeat(3, 1fr);">
           <div class="rg-row-label">NeRSP</div>
           <div class="img-compare">
             <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0024/image.png" alt="Image">
@@ -646,8 +646,8 @@
           </div>
         </div>
       </div>
-      <div style="display: flex; align-items: stretch; padding-top: 24px;">
-        <img src="../img/poppy/error_map_colorbar.png" alt="colorbar" style="height: 100%; width: 28px; object-fit: fill; border-radius: 4px;">
+      <div style="display: flex; align-items: center; padding-top: 24px;">
+        <img src="../img/poppy/error_map_colorbar.png" alt="colorbar" style="height: 260px; width: auto; border-radius: 4px;">
       </div>
     </div>
     <p class="fig-caption" style="margin-top: 14px;">
