@@ -584,89 +584,76 @@
   <div class="proj-section">
     <h2>3D Mesh Reconstruction</h2>
 
-    <div class="results-grid">
-      <!-- Column headers -->
-      <div class="rg-header">
-        <div class="rg-row-label"></div>
-        <div class="rg-col-label">Input</div>
-        <div class="rg-col-label">Normal</div>
-        <div class="rg-col-label">Error Map</div>
-        <div class="rg-col-label">Mesh</div>
-      </div>
+    <div style="display: flex; gap: 8px; align-items: stretch;">
+      <div class="results-grid" style="flex: 1;">
+        <!-- Column headers -->
+        <div class="rg-header">
+          <div class="rg-row-label"></div>
+          <div class="rg-col-label">Input</div>
+          <div class="rg-col-label">Normal</div>
+          <div class="rg-col-label">3D Mesh Error Map</div>
+        </div>
 
-      <!-- Row 1: FROG 0000 -->
-      <div class="rg-row">
-        <div class="rg-row-label">NeRSP</div>
-        <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0000/image.png" alt="Image">
-          <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0000/polar.png" alt="Polarization">
-          <input type="range" min="0" max="100" value="50" class="ic-range">
-          <div class="ic-divider"></div>
-          <div class="ic-labels"><span>Image</span><span>Polarization</span></div>
+        <!-- Row 1: FROG 0000 -->
+        <div class="rg-row">
+          <div class="rg-row-label">NeRSP</div>
+          <div class="img-compare">
+            <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0000/image.png" alt="Image">
+            <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0000/polar.png" alt="Polarization">
+            <input type="range" min="0" max="100" value="50" class="ic-range">
+            <div class="ic-divider"></div>
+            <div class="ic-labels"><span>Image</span><span>Polarization</span></div>
+          </div>
+          <div class="img-compare">
+            <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0000/normal_moge.png" alt="MoGe-2">
+            <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0000/normal_moge+polar.png" alt="+Poppy">
+            <input type="range" min="0" max="100" value="50" class="ic-range">
+            <div class="ic-divider"></div>
+            <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
+          </div>
+          <div class="img-compare">
+            <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0000/mesh_moge.png" alt="MoGe-2">
+            <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0000/mesh_poppy.png" alt="+Poppy">
+            <input type="range" min="0" max="100" value="50" class="ic-range">
+            <div class="ic-divider"></div>
+            <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
+          </div>
         </div>
-        <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0000/normal_moge.png" alt="MoGe-2">
-          <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0000/normal_moge+polar.png" alt="+Poppy">
-          <input type="range" min="0" max="100" value="50" class="ic-range">
-          <div class="ic-divider"></div>
-          <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
-        </div>
-        <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0000/errmap_moge.png" alt="MoGe-2">
-          <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0000/errmap_moge+polar.png" alt="+Poppy">
-          <input type="range" min="0" max="100" value="50" class="ic-range">
-          <div class="ic-divider"></div>
-          <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
-        </div>
-        <div class="img-compare" style="flex: 1;">
-          <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0000/mesh_moge.png" alt="MoGe-2">
-          <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0000/mesh_poppy.png" alt="+Poppy">
-          <input type="range" min="0" max="100" value="50" class="ic-range">
-          <div class="ic-divider"></div>
-          <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
-        </div>
-        <img src="../img/poppy/error_map_colorbar.png" alt="colorbar" style="height: auto; width: 28px; border-radius: 4px; align-self: stretch; object-fit: fill;">
-      </div>
 
-      <!-- Row 2: FROG 0024 -->
-      <div class="rg-row">
-        <div class="rg-row-label">NeRSP</div>
-        <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0024/image.png" alt="Image">
-          <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0024/polar.png" alt="Polarization">
-          <input type="range" min="0" max="100" value="50" class="ic-range">
-          <div class="ic-divider"></div>
-          <div class="ic-labels"><span>Image</span><span>Polarization</span></div>
+        <!-- Row 2: FROG 0024 -->
+        <div class="rg-row">
+          <div class="rg-row-label">NeRSP</div>
+          <div class="img-compare">
+            <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0024/image.png" alt="Image">
+            <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0024/polar.png" alt="Polarization">
+            <input type="range" min="0" max="100" value="50" class="ic-range">
+            <div class="ic-divider"></div>
+            <div class="ic-labels"><span>Image</span><span>Polarization</span></div>
+          </div>
+          <div class="img-compare">
+            <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0024/normal_moge.png" alt="MoGe-2">
+            <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0024/normal_moge+polar.png" alt="+Poppy">
+            <input type="range" min="0" max="100" value="50" class="ic-range">
+            <div class="ic-divider"></div>
+            <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
+          </div>
+          <div class="img-compare">
+            <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0024/mesh_moge.png" alt="MoGe-2">
+            <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0024/mesh_poppy.png" alt="+Poppy">
+            <input type="range" min="0" max="100" value="50" class="ic-range">
+            <div class="ic-divider"></div>
+            <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
+          </div>
         </div>
-        <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0024/normal_moge.png" alt="MoGe-2">
-          <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0024/normal_moge+polar.png" alt="+Poppy">
-          <input type="range" min="0" max="100" value="50" class="ic-range">
-          <div class="ic-divider"></div>
-          <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
-        </div>
-        <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0024/errmap_moge.png" alt="MoGe-2">
-          <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0024/errmap_moge+polar.png" alt="+Poppy">
-          <input type="range" min="0" max="100" value="50" class="ic-range">
-          <div class="ic-divider"></div>
-          <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
-        </div>
-        <div class="img-compare" style="flex: 1;">
-          <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0024/mesh_moge.png" alt="MoGe-2">
-          <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0024/mesh_poppy.png" alt="+Poppy">
-          <input type="range" min="0" max="100" value="50" class="ic-range">
-          <div class="ic-divider"></div>
-          <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
-        </div>
-        <div style="width: 28px;"></div>
+      </div>
+      <div style="display: flex; align-items: center; padding-top: 24px;">
+        <img src="../img/poppy/error_map_colorbar.png" alt="colorbar" style="height: 200px; width: auto; border-radius: 4px;">
       </div>
     </div>
     <p class="fig-caption" style="margin-top: 14px;">
       3D mesh reconstruction by VCR-GauS on the FROG scene from the NeRSP dataset.
       <b>Normal</b>: compares MoGe-2 surface normals with Poppy-refined normals.
-      <b>Error Map</b>: angular error relative to ground truth (range 0&ndash;50°); lower is better.
-      <b>Mesh</b>: reconstructed 3D mesh colored by signed distance.
+      <b>3D Mesh Error Map</b>: reconstructed 3D mesh colored by signed distance.
     </p>
   </div>
 
