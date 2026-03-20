@@ -378,7 +378,6 @@
         <div class="rg-col-label">Input</div>
         <div class="rg-col-label">Normal</div>
         <div class="rg-col-label">Error Map</div>
-        <div class="rg-col-label">Radiance Decomposition</div>
       </div>
 
       <!-- Row 1: NeRSP -->
@@ -404,13 +403,6 @@
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
-        </div>
-        <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/nersp_real_LION_0045/Ls.png" alt="Ls">
-          <img class="ic-after"  src="../img/poppy/nersp_real_LION_0045/Ld.png" alt="Ld">
-          <input type="range" min="0" max="100" value="50" class="ic-range">
-          <div class="ic-divider"></div>
-          <div class="ic-labels"><span>L<sub>s</sub></span><span>L<sub>d</sub></span></div>
         </div>
       </div>
 
@@ -438,13 +430,6 @@
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
         </div>
-        <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/pisr_BlackLoong_012/Ls.png" alt="Ls">
-          <img class="ic-after"  src="../img/poppy/pisr_BlackLoong_012/Ld.png" alt="Ld">
-          <input type="range" min="0" max="100" value="50" class="ic-range">
-          <div class="ic-divider"></div>
-          <div class="ic-labels"><span>L<sub>s</sub></span><span>L<sub>d</sub></span></div>
-        </div>
       </div>
 
       <!-- Row 3: SfPUEL -->
@@ -471,13 +456,6 @@
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
         </div>
-        <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/sfpuel_real_real1_owlblue/Ls.png" alt="Ls">
-          <img class="ic-after"  src="../img/poppy/sfpuel_real_real1_owlblue/Ld.png" alt="Ld">
-          <input type="range" min="0" max="100" value="50" class="ic-range">
-          <div class="ic-divider"></div>
-          <div class="ic-labels"><span>L<sub>s</sub></span><span>L<sub>d</sub></span></div>
-        </div>
       </div>
     </div><!-- .results-grid -->
     <p class="fig-caption" style="margin-top: 14px;">
@@ -485,8 +463,7 @@
       <b>Input</b>: compares the RGB image with its paired polarization image.
       <b>Normal</b>: compares MoGe-2 surface normals with Poppy-refined normals.
       <b>Error Map</b>: angular error relative to ground truth (range 0&ndash;50°); lower is better.
-      <b>Radiance Decomposition</b>: compares the specular (L<sub>s</sub>) and diffuse (L<sub>d</sub>) components estimated by Poppy.
-      L<sub>s</sub> brightness is enhanced by &times;2 for visualization. SfPUEL image brightness is enhanced by &times;4 for visualization.
+      SfPUEL image brightness is enhanced by &times;4 for visualization.
     </p>
   </div>
 
