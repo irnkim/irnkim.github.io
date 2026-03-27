@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Poppy</title>
-  <link rel="icon" type="image/png" href="../img/poppy/poppy_icon.png" />
+  <link rel="icon" type="image/png" href="img/poppy_icon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -318,7 +318,7 @@
 
   <!-- ── Header ─────────────────────────────────────────────────────── -->
   <div class="project-header">
-    <h1><img src="../img/poppy/poppy_icon.png" alt="" style="height:1em;vertical-align:middle;margin-right:0.25em;"><strong>Poppy</strong>: Polarization-Based Plug-and-Play Guidance for Enhancing Surface Normal Estimation</h1>
+    <h1><img src="img/poppy_icon.png" alt="" style="height:1em;vertical-align:middle;margin-right:0.25em;"><strong>Poppy</strong>: Polarization-Based Plug-and-Play Guidance for Enhancing Surface Normal Estimation</h1>
 
     <div class="author-list">
       <a href="https://irnkim.github.io">Irene Kim</a>
@@ -358,7 +358,7 @@
   <div class="proj-section">
     <h2>Method</h2>
     <div class="teaser-wrap">
-      <img src="../img/poppy/pipeline.gif" alt="Poppy pipeline" loop />
+      <img src="img/pipeline.gif" alt="Poppy pipeline" loop />
     </div>
     <p class="fig-caption">
       Overview of the Poppy framework. Given a single RGB-polarization image pair, Poppy refines
@@ -384,22 +384,22 @@
       <div class="rg-row">
         <div class="rg-row-label">NeRSP</div>
         <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/nersp_real_LION_0045/image.png" alt="Image">
-          <img class="ic-after"  src="../img/poppy/nersp_real_LION_0045/polar.png" alt="Polar">
+          <img class="ic-before" src="img/nersp_real_LION_0045/image.png" alt="Image">
+          <img class="ic-after"  src="img/nersp_real_LION_0045/polar.png" alt="Polar">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>Image</span><span>Polarization</span></div>
         </div>
         <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/nersp_real_LION_0045/normal_moge.png" alt="MoGe">
-          <img class="ic-after"  src="../img/poppy/nersp_real_LION_0045/normal_moge+polar.png" alt="MoGe+Poppy">
+          <img class="ic-before" src="img/nersp_real_LION_0045/normal_moge.png" alt="MoGe">
+          <img class="ic-after"  src="img/nersp_real_LION_0045/normal_moge+polar.png" alt="MoGe+Poppy">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
         </div>
         <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/nersp_real_LION_0045/errmap_moge.png" alt="MoGe">
-          <img class="ic-after"  src="../img/poppy/nersp_real_LION_0045/errmap_moge+polar.png" alt="MoGe+Poppy">
+          <img class="ic-before" src="img/nersp_real_LION_0045/errmap_moge.png" alt="MoGe">
+          <img class="ic-after"  src="img/nersp_real_LION_0045/errmap_moge+polar.png" alt="MoGe+Poppy">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
@@ -410,22 +410,22 @@
       <div class="rg-row">
         <div class="rg-row-label">PISR</div>
         <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/pisr_BlackLoong_012/image.png" alt="Image">
-          <img class="ic-after"  src="../img/poppy/pisr_BlackLoong_012/polar.png" alt="Polar">
+          <img class="ic-before" src="img/pisr_BlackLoong_012/image.png" alt="Image">
+          <img class="ic-after"  src="img/pisr_BlackLoong_012/polar.png" alt="Polar">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>Image</span><span>Polarization</span></div>
         </div>
         <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/pisr_BlackLoong_012/normal_moge.png" alt="MoGe-2">
-          <img class="ic-after"  src="../img/poppy/pisr_BlackLoong_012/normal_moge+polar.png" alt="MoGe-2+Poppy">
+          <img class="ic-before" src="img/pisr_BlackLoong_012/normal_moge.png" alt="MoGe-2">
+          <img class="ic-after"  src="img/pisr_BlackLoong_012/normal_moge+polar.png" alt="MoGe-2+Poppy">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
         </div>
         <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/pisr_BlackLoong_012/errmap_moge.png" alt="MoGe-2">
-          <img class="ic-after"  src="../img/poppy/pisr_BlackLoong_012/errmap_moge+polar.png" alt="MoGe-2+Poppy">
+          <img class="ic-before" src="img/pisr_BlackLoong_012/errmap_moge.png" alt="MoGe-2">
+          <img class="ic-after"  src="img/pisr_BlackLoong_012/errmap_moge+polar.png" alt="MoGe-2+Poppy">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
@@ -436,22 +436,22 @@
       <div class="rg-row">
         <div class="rg-row-label">SfPUEL</div>
         <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/sfpuel_real_real1_owlblue/image.png" alt="Image">
-          <img class="ic-after"  src="../img/poppy/sfpuel_real_real1_owlblue/polar.png" alt="Polar">
+          <img class="ic-before" src="img/sfpuel_real_real1_owlblue/image.png" alt="Image">
+          <img class="ic-after"  src="img/sfpuel_real_real1_owlblue/polar.png" alt="Polar">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>Image</span><span>Polarization</span></div>
         </div>
         <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/sfpuel_real_real1_owlblue/normal_moge.png" alt="MoGe-2">
-          <img class="ic-after"  src="../img/poppy/sfpuel_real_real1_owlblue/normal_moge+polar.png" alt="MoGe-2+Poppy">
+          <img class="ic-before" src="img/sfpuel_real_real1_owlblue/normal_moge.png" alt="MoGe-2">
+          <img class="ic-after"  src="img/sfpuel_real_real1_owlblue/normal_moge+polar.png" alt="MoGe-2+Poppy">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
         </div>
         <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/sfpuel_real_real1_owlblue/errmap_moge.png" alt="MoGe-2">
-          <img class="ic-after"  src="../img/poppy/sfpuel_real_real1_owlblue/errmap_moge+polar.png" alt="MoGe-2+Poppy">
+          <img class="ic-before" src="img/sfpuel_real_real1_owlblue/errmap_moge.png" alt="MoGe-2">
+          <img class="ic-after"  src="img/sfpuel_real_real1_owlblue/errmap_moge+polar.png" alt="MoGe-2+Poppy">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
@@ -486,31 +486,31 @@
       <div class="rg-row" style="grid-template-columns: 60px repeat(5, 1fr);">
         <div class="rg-row-label">NeISF</div>
         <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/decomp_neisf_real_sakurapot_eval_img_001/image.png" alt="Image">
-          <img class="ic-after"  src="../img/poppy/decomp_neisf_real_sakurapot_eval_img_001/polar.png" alt="Polarization">
+          <img class="ic-before" src="img/decomp_neisf_real_sakurapot_eval_img_001/image.png" alt="Image">
+          <img class="ic-after"  src="img/decomp_neisf_real_sakurapot_eval_img_001/polar.png" alt="Polarization">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>Image</span><span>Polarization</span></div>
         </div>
         <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/decomp_neisf_real_sakurapot_eval_img_001/Ls.png" alt="Ls">
-          <img class="ic-after"  src="../img/poppy/decomp_neisf_real_sakurapot_eval_img_001/Ld.png" alt="Ld">
+          <img class="ic-before" src="img/decomp_neisf_real_sakurapot_eval_img_001/Ls.png" alt="Ls">
+          <img class="ic-after"  src="img/decomp_neisf_real_sakurapot_eval_img_001/Ld.png" alt="Ld">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>L<sub>s</sub></span><span>L<sub>d</sub></span></div>
         </div>
         <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/decomp_neisf_real_sakurapot_eval_img_001/polar_specular.png" alt="Polar Specular">
-          <img class="ic-after"  src="../img/poppy/decomp_neisf_real_sakurapot_eval_img_001/polar_diffuse.png" alt="Polar Diffuse">
+          <img class="ic-before" src="img/decomp_neisf_real_sakurapot_eval_img_001/polar_specular.png" alt="Polar Specular">
+          <img class="ic-after"  src="img/decomp_neisf_real_sakurapot_eval_img_001/polar_diffuse.png" alt="Polar Diffuse">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>Specular</span><span>Diffuse</span></div>
         </div>
         <div class="img-single">
-          <img src="../img/poppy/decomp_neisf_real_sakurapot_eval_img_001/metal.png" alt="Metallic">
+          <img src="img/decomp_neisf_real_sakurapot_eval_img_001/metal.png" alt="Metallic">
         </div>
         <div class="img-single">
-          <img src="../img/poppy/decomp_neisf_real_sakurapot_eval_img_001/recolor.png" alt="Recoloring">
+          <img src="img/decomp_neisf_real_sakurapot_eval_img_001/recolor.png" alt="Recoloring">
         </div>
       </div>
 
@@ -518,31 +518,31 @@
       <div class="rg-row" style="grid-template-columns: 60px repeat(5, 1fr);">
         <div class="rg-row-label">PANDORA</div>
         <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/decomp_pandora_a2_black_vase_v1_01/image.png" alt="Image">
-          <img class="ic-after"  src="../img/poppy/decomp_pandora_a2_black_vase_v1_01/polar.png" alt="Polarization">
+          <img class="ic-before" src="img/decomp_pandora_a2_black_vase_v1_01/image.png" alt="Image">
+          <img class="ic-after"  src="img/decomp_pandora_a2_black_vase_v1_01/polar.png" alt="Polarization">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>Image</span><span>Polarization</span></div>
         </div>
         <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/decomp_pandora_a2_black_vase_v1_01/Ls.png" alt="Ls">
-          <img class="ic-after"  src="../img/poppy/decomp_pandora_a2_black_vase_v1_01/Ld.png" alt="Ld">
+          <img class="ic-before" src="img/decomp_pandora_a2_black_vase_v1_01/Ls.png" alt="Ls">
+          <img class="ic-after"  src="img/decomp_pandora_a2_black_vase_v1_01/Ld.png" alt="Ld">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>L<sub>s</sub></span><span>L<sub>d</sub></span></div>
         </div>
         <div class="img-compare">
-          <img class="ic-before" src="../img/poppy/decomp_pandora_a2_black_vase_v1_01/polar_specular.png" alt="Polar Specular">
-          <img class="ic-after"  src="../img/poppy/decomp_pandora_a2_black_vase_v1_01/polar_diffuse.png" alt="Polar Diffuse">
+          <img class="ic-before" src="img/decomp_pandora_a2_black_vase_v1_01/polar_specular.png" alt="Polar Specular">
+          <img class="ic-after"  src="img/decomp_pandora_a2_black_vase_v1_01/polar_diffuse.png" alt="Polar Diffuse">
           <input type="range" min="0" max="100" value="50" class="ic-range">
           <div class="ic-divider"></div>
           <div class="ic-labels"><span>Specular</span><span>Diffuse</span></div>
         </div>
         <div class="img-single">
-          <img src="../img/poppy/decomp_pandora_a2_black_vase_v1_01/metal.png" alt="Metallic">
+          <img src="img/decomp_pandora_a2_black_vase_v1_01/metal.png" alt="Metallic">
         </div>
         <div class="img-single">
-          <img src="../img/poppy/decomp_pandora_a2_black_vase_v1_01/recolor.png" alt="Recoloring">
+          <img src="img/decomp_pandora_a2_black_vase_v1_01/recolor.png" alt="Recoloring">
         </div>
       </div>
     </div><!-- .results-grid -->
@@ -575,22 +575,22 @@
         <div class="rg-row" style="grid-template-columns: 60px repeat(3, 1fr);">
           <div class="rg-row-label">NeRSP</div>
           <div class="img-compare">
-            <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0000/image.png" alt="Image">
-            <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0000/polar.png" alt="Polarization">
+            <img class="ic-before" src="img/mesh_nersp_real_FROG_0000/image.png" alt="Image">
+            <img class="ic-after"  src="img/mesh_nersp_real_FROG_0000/polar.png" alt="Polarization">
             <input type="range" min="0" max="100" value="50" class="ic-range">
             <div class="ic-divider"></div>
             <div class="ic-labels"><span>Image</span><span>Polarization</span></div>
           </div>
           <div class="img-compare">
-            <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0000/normal_moge.png" alt="MoGe-2">
-            <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0000/normal_moge+polar.png" alt="+Poppy">
+            <img class="ic-before" src="img/mesh_nersp_real_FROG_0000/normal_moge.png" alt="MoGe-2">
+            <img class="ic-after"  src="img/mesh_nersp_real_FROG_0000/normal_moge+polar.png" alt="+Poppy">
             <input type="range" min="0" max="100" value="50" class="ic-range">
             <div class="ic-divider"></div>
             <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
           </div>
           <div class="img-compare">
-            <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0000/mesh_moge.png" alt="MoGe-2">
-            <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0000/mesh_poppy.png" alt="+Poppy">
+            <img class="ic-before" src="img/mesh_nersp_real_FROG_0000/mesh_moge.png" alt="MoGe-2">
+            <img class="ic-after"  src="img/mesh_nersp_real_FROG_0000/mesh_poppy.png" alt="+Poppy">
             <input type="range" min="0" max="100" value="50" class="ic-range">
             <div class="ic-divider"></div>
             <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
@@ -601,22 +601,22 @@
         <div class="rg-row" style="grid-template-columns: 60px repeat(3, 1fr);">
           <div class="rg-row-label">NeRSP</div>
           <div class="img-compare">
-            <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0024/image.png" alt="Image">
-            <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0024/polar.png" alt="Polarization">
+            <img class="ic-before" src="img/mesh_nersp_real_FROG_0024/image.png" alt="Image">
+            <img class="ic-after"  src="img/mesh_nersp_real_FROG_0024/polar.png" alt="Polarization">
             <input type="range" min="0" max="100" value="50" class="ic-range">
             <div class="ic-divider"></div>
             <div class="ic-labels"><span>Image</span><span>Polarization</span></div>
           </div>
           <div class="img-compare">
-            <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0024/normal_moge.png" alt="MoGe-2">
-            <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0024/normal_moge+polar.png" alt="+Poppy">
+            <img class="ic-before" src="img/mesh_nersp_real_FROG_0024/normal_moge.png" alt="MoGe-2">
+            <img class="ic-after"  src="img/mesh_nersp_real_FROG_0024/normal_moge+polar.png" alt="+Poppy">
             <input type="range" min="0" max="100" value="50" class="ic-range">
             <div class="ic-divider"></div>
             <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
           </div>
           <div class="img-compare">
-            <img class="ic-before" src="../img/poppy/mesh_nersp_real_FROG_0024/mesh_moge.png" alt="MoGe-2">
-            <img class="ic-after"  src="../img/poppy/mesh_nersp_real_FROG_0024/mesh_poppy.png" alt="+Poppy">
+            <img class="ic-before" src="img/mesh_nersp_real_FROG_0024/mesh_moge.png" alt="MoGe-2">
+            <img class="ic-after"  src="img/mesh_nersp_real_FROG_0024/mesh_poppy.png" alt="+Poppy">
             <input type="range" min="0" max="100" value="50" class="ic-range">
             <div class="ic-divider"></div>
             <div class="ic-labels"><span>MoGe-2</span><span>+Poppy</span></div>
@@ -624,7 +624,7 @@
         </div>
       </div>
       <div style="display: flex; align-items: center; padding-top: 24px;">
-        <img src="../img/poppy/error_map_colorbar.png" alt="colorbar" style="height: 260px; width: auto; border-radius: 4px;">
+        <img src="img/error_map_colorbar.png" alt="colorbar" style="height: 260px; width: auto; border-radius: 4px;">
       </div>
     </div>
     <p class="fig-caption" style="margin-top: 14px;">
