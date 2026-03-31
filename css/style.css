@@ -163,7 +163,8 @@ section p {
   margin-bottom: 3px;
 }
 
-.pub-authors .me { font-weight: 600; color: var(--text); }
+.pub-authors .me { font-weight: 600; color: var(--text); text-decoration: none; }
+.pub-authors .me:hover { text-decoration: underline; }
 
 .pub-venue {
   font-size: 13.5px;
