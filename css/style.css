@@ -148,6 +148,15 @@ section p {
   color: var(--text);
 }
 
+.pub-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.pub-title a:hover {
+  text-decoration: underline;
+}
+
 .pub-authors {
   font-size: 14px;
   color: var(--muted);
